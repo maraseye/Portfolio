@@ -12,6 +12,7 @@ function App() {
           <a href="#hero">Accueil</a>
           <a href="#about">À propos</a>
           <a href="#skills">Compétences</a>
+          <a href="#certifications">Certifications</a>
           <a href="#projects">Projets</a>
           <a href="#contact" className="cta">Contact</a>
         </div>
@@ -72,15 +73,45 @@ function App() {
           <span className="bar" />
         </div>
         <ul className="skills-grid">
+          <li className="skill">C</li>
+          <li className="skill">JAVA</li>
+          <li className="skill">Python</li>
+          <li className="skill">HTML et CSS</li>
+          <li className="skill">JavaScript</li>
           <li className="skill">React</li>
-          <li className="skill">TypeScript</li>
-          <li className="skill">Node.js</li>
-          <li className="skill">Express</li>
-          <li className="skill">REST / API</li>
-          <li className="skill">SQL / NoSQL</li>
-          <li className="skill">CI/CD</li>
-          <li className="skill">Design Systems</li>
+          <li className="skill">FastAPI</li>
+          <li className="skill">MySQL</li>
+          <li className="skill">Oracle</li>
+          <li className="skill">PlSql</li>
+          <li className="skill">Keycloak</li>
+          <li className="skill">Traefik</li>
+          <li className="skill">RAbbitmq</li>
         </ul>
+      </section>
+
+      <section id="certifications" className="section certs">
+        <div className="section-title">
+          <h2>Certifications</h2>
+          <span className="bar" />
+        </div>
+        <div className="certs-grid">
+          {[
+            { name: 'AWS Cloud Practitioner', org: 'Amazon Web Services', year: '2024' },
+            { name: 'Google Associate Cloud Engineer', org: 'Google Cloud', year: '2024' },
+            { name: 'Scrum Master', org: 'Scrum.org', year: '2023' },
+          ].map((c) => (
+            <article key={c.name} className="cert-card">
+              <div className="cert-header">
+                <span className="chip">{c.year}</span>
+                <h3>{c.name}</h3>
+              </div>
+              <p className="org">{c.org}</p>
+              <div className="project-actions">
+                <a className="btn small" href="#">Voir le badge</a>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="projects" className="section projects">
