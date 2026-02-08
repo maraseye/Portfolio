@@ -21,7 +21,7 @@ function App() {
       <header id="hero" className="hero">
         <div className="hero-glow" />
         <div className="hero-content">
-          <p className="pill">Ingénieur Informatique • DUT Info</p>
+          <p className="pill">Ingénieur Informatique </p>
           <h1>
             Créons des expériences web <span className="neon">immersives</span>
           </h1>
@@ -86,6 +86,7 @@ function App() {
           <li className="skill">Keycloak</li>
           <li className="skill">Traefik</li>
           <li className="skill">RAbbitmq</li>
+          <li className="skill">R</li>        
         </ul>
       </section>
 
