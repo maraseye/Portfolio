@@ -3,34 +3,24 @@ import { motion } from 'motion/react';
 export function Skills() {
   const skillCategories = [
     {
-      category: "Langages",
-      skills: [
-        { name: "Python", level: 90 },
-        { name: "JavaScript/TypeScript", level: 85 },
-        { name: "Java", level: 80 },
-        { name: "C/C++", level: 75 },
-        { name: "SQL", level: 85 }
-      ]
+      category: "Front-end",
+      skills: ["HTML", "CSS", "JavaScript", "React"]
     },
     {
-      category: "Frameworks & Librairies",
-      skills: [
-        { name: "React & Next.js", level: 90 },
-        { name: "Node.js & Express", level: 85 },
-        { name: "TensorFlow & PyTorch", level: 80 },
-        { name: "Spring Boot", level: 75 },
-        { name: "Tailwind CSS", level: 90 }
-      ]
+      category: "Back-end",
+      skills: ["PHP", "Node.js", "Python"]
     },
     {
-      category: "Outils & DevOps",
-      skills: [
-        { name: "Git & GitHub", level: 90 },
-        { name: "Docker", level: 85 },
-        { name: "AWS & Azure", level: 75 },
-        { name: "CI/CD", level: 80 },
-        { name: "Linux", level: 85 }
-      ]
+      category: "Bases de donnees",
+      skills: ["MySQL", "PostgreSQL", "Oracle"]
+    },
+    {
+      category: "Outils",
+      skills: ["GitHub", "Docker", "Postman", "Figma", "Keycloak", "Traefik", "RabbitMQ"]
+    },
+    {
+      category: "Design",
+      skills: ["Figma"]
     }
   ];
 
@@ -50,7 +40,7 @@ export function Skills() {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
@@ -65,23 +55,18 @@ export function Skills() {
                   <h3 className="text-2xl font-semibold text-slate-200 mb-6 text-center">
                     {category.category}
                   </h3>
-                  <div className="space-y-6">
+                  <div className="flex flex-wrap gap-3">
                     {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex}>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-slate-300">{skill.name}</span>
-                          <span className="text-slate-400">{skill.level}%</span>
-                        </div>
-                        <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
-                          <motion.div
-                            className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.5 + skillIndex * 0.1 }}
-                          />
-                        </div>
-                      </div>
+                      <motion.span
+                        key={skillIndex}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.2 + skillIndex * 0.05 }}
+                        className="px-4 py-2 text-sm bg-slate-700/50 text-slate-200 rounded-full border border-slate-600"
+                      >
+                        {skill}
+                      </motion.span>
                     ))}
                   </div>
                 </div>

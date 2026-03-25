@@ -4,46 +4,51 @@ import { GraduationCap, Award, Calendar } from 'lucide-react';
 export function Education() {
   const education = [
     {
-      degree: "Cycle Ingénieur en Informatique",
-      school: "École Nationale d'Ingénieurs",
-      period: "2023 - 2026",
-      description: "Spécialisation en Intelligence Artificielle et Systèmes Distribués",
+      degree: "Cycle ingenieur en informatique",
+      school: "Ecole Superieure Polytechnique de Dakar (ESP)",
+      period: "Actuellement",
+      description: "Poursuite du cursus ingenieur apres l'obtention du DUT.",
       achievements: [
-        "Mention Très Bien",
-        "Major de promotion en IA",
-        "Projet de fin d'études sur le Deep Learning"
+        "Approfondissement en architecture logicielle",
+        "Projets pratiques en developpement web",
+        "Travail en equipe sur des projets appliques"
       ]
     },
     {
-      degree: "Classes Préparatoires",
-      school: "Lycée d'Excellence",
-      period: "2021 - 2023",
-      description: "Mathématiques et Physique (MP)",
+      degree: "DUT Informatique",
+      school: "Ecole Superieure Polytechnique de Dakar (ESP)",
+      period: "Valide",
+      description: "Formation technique en programmation, bases de donnees et genie logiciel.",
       achievements: [
-        "Admission aux concours Grandes Écoles",
-        "Excellence en mathématiques appliquées",
-        "Mention au concours CCP"
+        "Realisation de projets full-stack",
+        "Consolidation des bases en algorithmique",
+        "Maitrise des outils de developpement collaboratif"
       ]
     },
     {
-      degree: "Baccalauréat Scientifique",
-      school: "Lycée Victor Hugo",
-      period: "2018 - 2021",
-      description: "Option Sciences de l'Ingénieur",
+      degree: "Baccalaureat",
+      school: "Lycee Billes",
+      period: "2023",
+      description: "Obtention du baccalaureat avant l'entree a l'ESP.",
       achievements: [
-        "Mention Très Bien",
-        "Prix d'excellence en sciences",
-        "Projet robotique lauréat"
+        "Base solide pour les etudes superieures",
+        "Orientation vers l'informatique",
+        "Preparation du parcours ingenieur"
       ]
     }
   ];
 
   const certifications = [
-    "AWS Certified Solutions Architect",
-    "Google Cloud Professional",
-    "TensorFlow Developer Certificate",
-    "Azure AI Engineer Associate"
+    "Huawei Talent Online: Data Communication and Network Technology",
+    "UML and Object-Oriented Design Foundations (Udemy)"
   ];
+
+  const experience = {
+    role: "Stagiaire en developpement logiciel",
+    company: "Engy Partners",
+    period: "6 mois",
+    description: "Developpement de microservices et participation au deploiement de projets."
+  };
 
   return (
     <section id="formation" className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
@@ -118,6 +123,7 @@ export function Education() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="mb-16"
           >
             <h3 className="text-3xl font-semibold text-slate-200 mb-8 text-center">
               Certifications
@@ -142,6 +148,34 @@ export function Education() {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+
+          {/* Experience */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-3xl font-semibold text-slate-200 mb-8 text-center">
+              Experience professionnelle
+            </h3>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 group-hover:border-slate-600 transition-all">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-slate-200">{experience.role}</h4>
+                    <p className="text-blue-400">{experience.company}</p>
+                    <p className="text-slate-400 mb-2">{experience.period}</p>
+                    <p className="text-slate-300">{experience.description}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

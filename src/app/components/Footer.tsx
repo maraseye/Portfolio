@@ -15,7 +15,7 @@ export function Footer() {
           className="text-center"
         >
           <p className="text-slate-400 flex items-center justify-center gap-2 flex-wrap">
-            © {currentYear} Alex Dubois. Conçu avec
+            © {currentYear} Serigne Amsatou Lo Seye. Concu avec
             <Heart className="w-4 h-4 text-red-500 inline-block fill-current" />
             et React
           </p>

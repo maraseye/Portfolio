@@ -6,17 +6,17 @@ export function About() {
     {
       icon: Code2,
       title: "Développement Full-Stack",
-      description: "Expertise en React, Node.js, Python et bases de données modernes"
+      description: "Conception d'applications web robustes avec React, Node.js, PHP et Python."
     },
     {
       icon: Brain,
-      title: "Intelligence Artificielle",
-      description: "Machine Learning, Deep Learning et traitement du langage naturel"
+      title: "Performance & Expérience",
+      description: "Attention portée à la fluidité, l'ergonomie et la qualité du rendu."
     },
     {
       icon: Rocket,
-      title: "Innovation & Performance",
-      description: "Passionné par les technologies émergentes et l'optimisation"
+      title: "Créativité inspirée du gaming",
+      description: "Interfaces modernes avec une direction visuelle dynamique et soignée."
     }
   ];
 
@@ -47,10 +47,10 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl" />
               <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
                 <p className="text-lg text-slate-300 leading-relaxed mb-6">
-                  Actuellement en 3ème année de cycle ingénieur en informatique, je suis passionné par le développement logiciel et les technologies innovantes. Mon parcours m'a permis d'acquérir une solide expertise technique tout en développant ma créativité.
+                  J'ai obtenu un DUT Informatique à l'Ecole Superieure Polytechnique de Dakar et je poursuis actuellement un cycle d'ingenieur en informatique dans le meme etablissement.
                 </p>
                 <p className="text-lg text-slate-300 leading-relaxed">
-                  Je cherche constamment à relever de nouveaux défis et à contribuer à des projets qui ont un impact réel. Mon objectif est de combiner excellence technique et vision stratégique pour créer des solutions innovantes.
+                  J'aime concevoir des applications robustes avec une touche creative.
                 </p>
               </div>
             </div>

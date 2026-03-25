@@ -3,54 +3,72 @@ import { Github, ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Projects() {
+  const hasValidLink = (url: string) => url.trim() !== "" && url !== "#";
+
   const projects = [
     {
-      title: "Application E-Commerce IA",
-      description: "Plateforme e-commerce avec recommandations personnalisées basées sur l'IA et système de paiement intégré",
-      tags: ["React", "Node.js", "TensorFlow", "MongoDB"],
+      title: "Todo List",
+      description: "Application de gestion de taches orientee productivite avec une interface claire et rapide a prendre en main. Ce projet m'a permis de renforcer la structuration d'etat et la conception d'une UX fluide.",
+      tags: ["JavaScript", "React", "UI"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      github: "https://github.com",
-      demo: "https://example.com"
+      github: "#",
+      demo: "#"
     },
     {
-      title: "Système de Reconnaissance Faciale",
-      description: "Application de reconnaissance faciale en temps réel utilisant des réseaux de neurones convolutifs",
-      tags: ["Python", "OpenCV", "PyTorch", "FastAPI"],
+      title: "Plateforme de gestion de vente de betails",
+      description: "Solution web pour organiser les ventes, suivre les transactions et centraliser les informations clients. L'objectif etait de digitaliser un processus metier concret avec une architecture evolutive.",
+      tags: ["React", "Node.js", "MySQL"],
       image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80",
-      github: "https://github.com",
-      demo: null
+      github: "#",
+      demo: "#"
     },
     {
-      title: "Dashboard Analytics IoT",
-      description: "Tableau de bord interactif pour visualiser les données de capteurs IoT en temps réel avec alertes automatiques",
-      tags: ["React", "TypeScript", "WebSocket", "PostgreSQL"],
+      title: "Application web de gestion d'un tournoi d'athletisme",
+      description: "Application permettant la gestion des participants, des epreuves, des classements et des resultats. Ce travail m'a aide a modeliser des regles metier et a structurer des donnees relationnelles.",
+      tags: ["PHP", "JavaScript", "PostgreSQL"],
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      github: "https://github.com",
-      demo: "https://example.com"
+      github: "#",
+      demo: "#"
     },
     {
-      title: "API RESTful Microservices",
-      description: "Architecture microservices scalable avec authentification JWT et documentation Swagger",
-      tags: ["Spring Boot", "Docker", "Kubernetes", "Redis"],
+      title: "Mini jeu Whack un bug (JavaScript)",
+      description: "Mini jeu web axe sur la reactivite, le timing et le feedback visuel. Il m'a permis d'explorer la logique evenementielle JavaScript et les animations pour une experience ludique.",
+      tags: ["JavaScript", "HTML", "CSS"],
       image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-      github: "https://github.com",
-      demo: null
+      github: "#",
+      demo: "#"
     },
     {
-      title: "Chatbot IA Conversationnel",
-      description: "Assistant virtuel intelligent utilisant le traitement du langage naturel pour répondre aux questions",
-      tags: ["Python", "Transformers", "LangChain", "React"],
+      title: "Plateforme de gestion de prise de rendez-vous dans les administrations",
+      description: "Projet en phase de conception visant a fluidifier la prise de rendez-vous administratifs. J'ai travaille sur l'analyse des besoins, la modelisation UML et la definition des parcours utilisateurs.",
+      tags: ["Conception", "UML", "Architecture"],
       image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
-      github: "https://github.com",
-      demo: "https://example.com"
+      github: "#",
+      demo: "#"
     },
     {
-      title: "Application Mobile Fitness",
-      description: "App mobile cross-platform de suivi d'activités sportives avec plans d'entraînement personnalisés",
-      tags: ["React Native", "Firebase", "Redux", "ML Kit"],
+      title: "Application mobile SimpleBlog",
+      description: "Application mobile pour publier et consulter des contenus de type blog depuis smartphone. Ce projet m'a permis de consolider l'integration API et l'optimisation de l'interface sur petit ecran.",
+      tags: ["Mobile", "API", "UI"],
       image: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=800&q=80",
-      github: "https://github.com",
-      demo: null
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "Application de gestion des depenses en Java (terminal)",
+      description: "Application console en Java pour enregistrer, classer et suivre les depenses personnelles. Elle m'a permis d'approfondir la programmation orientee objet et la structuration de logique metier en mode terminal.",
+      tags: ["Java", "Terminal", "POO"],
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "Portfolio personnel",
+      description: "Portfolio personnel developpe avec React et TypeScript pour presenter mon parcours, mes competences et mes realisations. J'y ai travaille la qualite visuelle, la coherence des sections et la performance front-end.",
+      tags: ["React", "TypeScript", "Tailwind"],
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+      github: "#",
+      demo: "#"
     }
   ];
 
@@ -111,17 +129,19 @@ export function Projects() {
                     ))}
                   </div>
                   
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-slate-700/50 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      Code
-                    </a>
-                    {project.demo && (
+                  <div className="flex gap-4 flex-wrap">
+                    {hasValidLink(project.github) && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-slate-700/50 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </a>
+                    )}
+                    {hasValidLink(project.demo) && (
                       <a
                         href={project.demo}
                         target="_blank"
@@ -131,6 +151,11 @@ export function Projects() {
                         <ExternalLink className="w-4 h-4" />
                         Demo
                       </a>
+                    )}
+                    {!hasValidLink(project.github) && !hasValidLink(project.demo) && (
+                      <span className="px-4 py-2 text-sm bg-slate-700/40 text-slate-400 rounded-lg border border-slate-600">
+                        Liens en cours d'ajout
+                      </span>
                     )}
                   </div>
                 </div>
