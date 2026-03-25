@@ -9,56 +9,56 @@ export function Projects() {
     {
       title: "Todo List",
       description: "Application de gestion de taches orientee productivite avec une interface claire et rapide a prendre en main. Ce projet m'a permis de renforcer la structuration d'etat et la conception d'une UX fluide.",
-      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F4DD.svg",
       github: "#",
       demo: "#"
     },
     {
       title: "Plateforme de gestion de vente de betails",
       description: "Solution web pour organiser les ventes, suivre les transactions et centraliser les informations clients. L'objectif etait de digitaliser un processus metier concret avec une architecture evolutive.",
-      image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F411.svg",
       github: "#",
       demo: "#"
     },
     {
       title: "Application web de gestion d'un tournoi d'athletisme",
       description: "Application permettant la gestion des participants, des epreuves, des classements et des resultats. Ce travail m'a aide a modeliser des regles metier et a structurer des donnees relationnelles.",
-      image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F3C3.svg",
       github: "#",
       demo: "#"
     },
     {
       title: "Mini jeu Whack un bug (JavaScript)",
       description: "Mini jeu web axe sur la reactivite, le timing et le feedback visuel. Il m'a permis d'explorer la logique evenementielle JavaScript et les animations pour une experience ludique.",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F41B.svg",
       github: "#",
       demo: "#"
     },
     {
       title: "Plateforme de gestion de prise de rendez-vous dans les administrations",
       description: "Projet en phase de conception visant a fluidifier la prise de rendez-vous administratifs. J'ai travaille sur l'analyse des besoins, la modelisation UML et la definition des parcours utilisateurs.",
-      image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F4C5.svg",
       github: "#",
       demo: "#"
     },
     {
       title: "Application mobile SimpleBlog",
       description: "Application mobile pour publier et consulter des contenus de type blog depuis smartphone. Ce projet m'a permis de consolider l'integration API et l'optimisation de l'interface sur petit ecran.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F4F1.svg",
       github: "#",
       demo: "#"
     },
     {
       title: "Application de gestion des depenses en Java (terminal)",
       description: "Application console en Java pour enregistrer, classer et suivre les depenses personnelles. Elle m'a permis d'approfondir la programmation orientee objet et la structuration de logique metier en mode terminal.",
-      image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F4B8.svg",
       github: "#",
       demo: "#"
     },
     {
       title: "Portfolio personnel",
       description: "Portfolio personnel developpe avec React et TypeScript pour presenter mon parcours, mes competences et mes realisations. J'y ai travaille la qualite visuelle, la coherence des sections et la performance front-end.",
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&q=80",
+      image: "https://cdn.jsdelivr.net/npm/openmoji@14.0.0/color/svg/1F4BB.svg",
       github: "#",
       demo: "#"
     }

@@ -6,14 +6,17 @@ export function Education() {
     {
       degree: "Cycle ingenieur en informatique",
       school: "Ecole Superieure Polytechnique de Dakar (ESP)",
+      status: "En cours",
     },
     {
       degree: "DUT Informatique",
       school: "Ecole Superieure Polytechnique de Dakar (ESP)",
+      status: "Termine",
     },
     {
       degree: "Baccalaureat",
       school: "Lycee Billes",
+      status: "Termine",
     }
   ];
 
@@ -67,9 +70,18 @@ export function Education() {
                       </div>
                       
                       <div className="flex-grow">
-                        <h3 className="text-2xl font-semibold text-slate-200 mb-3">
-                          {item.degree}
-                        </h3>
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3">
+                          <h3 className="text-2xl font-semibold text-slate-200">
+                            {item.degree}
+                          </h3>
+                          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm border w-fit ${
+                            item.status === "En cours"
+                              ? "bg-blue-500/15 text-blue-300 border-blue-500/40"
+                              : "bg-emerald-500/15 text-emerald-300 border-emerald-500/40"
+                          }`}>
+                            {item.status}
+                          </span>
+                        </div>
                         
                         <p className="text-lg text-blue-400 mb-3">{item.school}</p>
                       </div>
