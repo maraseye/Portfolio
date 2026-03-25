@@ -1,40 +1,19 @@
 import { motion } from 'motion/react';
-import { GraduationCap, Award, Calendar } from 'lucide-react';
+import { GraduationCap, Award } from 'lucide-react';
 
 export function Education() {
   const education = [
     {
       degree: "Cycle ingenieur en informatique",
       school: "Ecole Superieure Polytechnique de Dakar (ESP)",
-      period: "Actuellement",
-      description: "Poursuite du cursus ingenieur apres l'obtention du DUT.",
-      achievements: [
-        "Approfondissement en architecture logicielle",
-        "Projets pratiques en developpement web",
-        "Travail en equipe sur des projets appliques"
-      ]
     },
     {
       degree: "DUT Informatique",
       school: "Ecole Superieure Polytechnique de Dakar (ESP)",
-      period: "Valide",
-      description: "Formation technique en programmation, bases de donnees et genie logiciel.",
-      achievements: [
-        "Realisation de projets full-stack",
-        "Consolidation des bases en algorithmique",
-        "Maitrise des outils de developpement collaboratif"
-      ]
     },
     {
       degree: "Baccalaureat",
       school: "Lycee Billes",
-      period: "2023",
-      description: "Obtention du baccalaureat avant l'entree a l'ESP.",
-      achievements: [
-        "Base solide pour les etudes superieures",
-        "Orientation vers l'informatique",
-        "Preparation du parcours ingenieur"
-      ]
     }
   ];
 
@@ -88,27 +67,11 @@ export function Education() {
                       </div>
                       
                       <div className="flex-grow">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                          <h3 className="text-2xl font-semibold text-slate-200">
-                            {item.degree}
-                          </h3>
-                          <div className="flex items-center gap-2 text-slate-400 mt-2 md:mt-0">
-                            <Calendar className="w-4 h-4" />
-                            <span>{item.period}</span>
-                          </div>
-                        </div>
+                        <h3 className="text-2xl font-semibold text-slate-200 mb-3">
+                          {item.degree}
+                        </h3>
                         
                         <p className="text-lg text-blue-400 mb-3">{item.school}</p>
-                        <p className="text-slate-300 mb-4">{item.description}</p>
-                        
-                        <div className="space-y-2">
-                          {item.achievements.map((achievement, achievementIndex) => (
-                            <div key={achievementIndex} className="flex items-center gap-2">
-                              <Award className="w-4 h-4 text-purple-400 flex-shrink-0" />
-                              <span className="text-slate-400">{achievement}</span>
-                            </div>
-                          ))}
-                        </div>
                       </div>
                     </div>
                   </div>

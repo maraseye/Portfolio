@@ -1,28 +1,66 @@
 import { motion } from 'motion/react';
+import { useMemo, useState } from 'react';
+import { Progress } from './ui/progress';
+import { ChevronDown } from 'lucide-react';
 
 export function Skills() {
-  const skillCategories = [
-    {
-      category: "Front-end",
-      skills: ["HTML", "CSS", "JavaScript", "React"]
-    },
-    {
-      category: "Back-end",
-      skills: ["PHP", "Node.js", "Python"]
-    },
-    {
-      category: "Bases de donnees",
-      skills: ["MySQL", "PostgreSQL", "Oracle"]
-    },
-    {
-      category: "Outils",
-      skills: ["GitHub", "Docker", "Postman", "Figma", "Keycloak", "Traefik", "RabbitMQ"]
-    },
-    {
-      category: "Design",
-      skills: ["Figma"]
-    }
-  ];
+  const categories = useMemo(
+    () => [
+      {
+        category: 'Front-end',
+        skills: [
+          { name: 'HTML', level: 85 },
+          { name: 'CSS', level: 80 },
+          { name: 'JavaScript', level: 82 },
+          { name: 'React', level: 78 },
+        ],
+      },
+      {
+        category: 'Langages de programmation',
+        skills: [
+          { name: 'C', level: 66 },
+          { name: 'Java', level: 76 },
+          { name: 'PHP', level: 70 },
+          { name: 'Python', level: 68 },
+        ],
+      },
+      {
+        category: 'Back-end',
+        skills: [
+          { name: 'PHP', level: 70 },
+          { name: 'Node.js', level: 72 },
+          { name: 'Python', level: 68 },
+        ],
+      },
+      {
+        category: 'Bases de donnees',
+        skills: [
+          { name: 'MySQL', level: 74 },
+          { name: 'PostgreSQL', level: 70 },
+          { name: 'Oracle', level: 60 },
+        ],
+      },
+      {
+        category: 'Outils',
+        skills: [
+          { name: 'GitHub', level: 78 },
+          { name: 'Docker', level: 65 },
+          { name: 'Postman', level: 72 },
+          { name: 'Keycloak', level: 58 },
+          { name: 'Traefik', level: 55 },
+          { name: 'RabbitMQ', level: 52 },
+        ],
+      },
+      {
+        category: 'Design',
+        skills: [{ name: 'Figma', level: 62 }],
+      },
+    ],
+    [],
+  );
+
+  const [openSkillId, setOpenSkillId] = useState<string | null>(null);
+  const toggle = (id: string) => setOpenSkillId((prev) => (prev === id ? null : id));
 
   return (
     <section id="competences" className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800">
@@ -41,7 +79,7 @@ export function Skills() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {skillCategories.map((category, categoryIndex) => (
+          {categories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
               initial={{ opacity: 0, y: 30 }}
@@ -55,19 +93,44 @@ export function Skills() {
                   <h3 className="text-2xl font-semibold text-slate-200 mb-6 text-center">
                     {category.category}
                   </h3>
-                  <div className="flex flex-wrap gap-3">
-                    {category.skills.map((skill, skillIndex) => (
-                      <motion.span
-                        key={skillIndex}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: 0.2 + skillIndex * 0.05 }}
-                        className="px-4 py-2 text-sm bg-slate-700/50 text-slate-200 rounded-full border border-slate-600"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
+                  <div className="space-y-3">
+                    {category.skills.map((skill, skillIndex) => {
+                      const id = `${category.category}:${skill.name}`;
+                      const isOpen = openSkillId === id;
+
+                      return (
+                        <motion.div
+                          key={id}
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: 0.2 + skillIndex * 0.05 }}
+                          className="rounded-xl border border-slate-700 bg-slate-900/30 overflow-hidden"
+                        >
+                          <button
+                            type="button"
+                            onClick={() => toggle(id)}
+                            className="w-full flex items-center justify-between gap-3 px-4 py-3 text-left hover:bg-slate-800/30 transition-colors"
+                            aria-expanded={isOpen}
+                          >
+                            <span className="text-slate-200 font-medium">{skill.name}</span>
+                            <ChevronDown
+                              className={`w-5 h-5 text-slate-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+
+                          {isOpen && (
+                            <div className="px-4 pb-4">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="text-sm text-slate-400">Niveau</span>
+                                <span className="text-sm text-slate-300">{skill.level}%</span>
+                              </div>
+                              <Progress value={skill.level} className="h-2 bg-slate-700/50" />
+                            </div>
+                          )}
+                        </motion.div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

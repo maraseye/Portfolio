@@ -1,19 +1,20 @@
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail, ArrowDown, Download } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
 
 const PROFILE_PHOTO_PATH = "/piece-jointe/photo.jpeg";
 const CV_PATH = "/piece-jointe/Mon%20CV.pdf";
 
 export function Hero() {
   return (
-    <section id="accueil" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+    <section id="accueil" className="min-h-screen flex items-center justify-center pt-16 md:pt-20 relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
       {/* Animated background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       
       {/* Gradient orbs */}
       <motion.div 
-        className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/30 rounded-full filter blur-[120px]"
+        className="pointer-events-none absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/30 rounded-full filter blur-[120px]"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -25,7 +26,7 @@ export function Hero() {
         }}
       />
       <motion.div 
-        className="absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-500/30 rounded-full filter blur-[120px]"
+        className="pointer-events-none absolute bottom-1/4 -right-20 w-72 h-72 bg-purple-500/30 rounded-full filter blur-[120px]"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -45,11 +46,28 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <ImageWithFallback
-              src={PROFILE_PHOTO_PATH}
-              alt="Portrait de Serigne Amsatou Lo Seye"
-              className="w-36 h-36 md:w-40 md:h-40 object-cover rounded-full mx-auto border-4 border-slate-700 shadow-[0_0_30px_rgba(59,130,246,0.25)]"
-            />
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  type="button"
+                  className="mx-auto block rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500/80 cursor-zoom-in"
+                  aria-label="Voir la photo en grand"
+                >
+                  <ImageWithFallback
+                    src={PROFILE_PHOTO_PATH}
+                    alt="Portrait de Serigne Amsatou Lo Seye"
+                    className="w-36 h-36 md:w-40 md:h-40 object-cover rounded-full mx-auto border-4 border-slate-700 shadow-[0_0_30px_rgba(59,130,246,0.25)]"
+                  />
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-3xl p-2 bg-slate-950 border-slate-700">
+                <ImageWithFallback
+                  src={PROFILE_PHOTO_PATH}
+                  alt="Portrait de Serigne Amsatou Lo Seye en grand format"
+                  className="w-full max-h-[80vh] object-contain rounded-md"
+                />
+              </DialogContent>
+            </Dialog>
           </motion.div>
 
           <motion.div
@@ -147,7 +165,7 @@ export function Hero() {
       </div>
       
       <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
