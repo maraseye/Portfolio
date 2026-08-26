@@ -42,7 +42,7 @@ const stats = [
   { value: 6, suffix: '+', label: 'Projets réalisés', color: 'from-blue-500 to-cyan-500' },
   { value: 5, suffix: ' mois', label: "Stage DevOps", color: 'from-purple-500 to-pink-500' },
   { value: 2, suffix: '', label: 'Certifications', color: 'from-amber-500 to-orange-500' },
-  { value: 39, suffix: '', label: 'Tests unitaires (Xéétali)', color: 'from-emerald-500 to-teal-500' },
+  { value: 39, suffix: '', label: 'Tests unitaires', color: 'from-emerald-500 to-teal-500' },
 ];
 
 export function About() {
